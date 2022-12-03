@@ -28,7 +28,7 @@ resource "vsphere_virtual_machine" "centos9" {
     linked_clone  = "false"
   }
   extra_config = {
-    "guestinfo.metadata" = base64encode(templatefile("${path.module}/templates/base/metadata.yaml", {
+    "guestinfo.metadata" = base64encode(templatefile("${path.module}/templates/base/metadata-centos9.yaml", {
       ip_address  = var.ip_address,
       subnet_mask = var.subnet_mask,
       gateway     = var.gateway,
@@ -71,7 +71,7 @@ resource "vsphere_virtual_machine" "ubuntu" {
     linked_clone  = "false"
   }
   extra_config = {
-    "guestinfo.metadata" = base64encode(templatefile("${path.module}/templates/base/metadata.yaml", {
+    "guestinfo.metadata" = base64encode(templatefile("${path.module}/templates/base/metadata-ubuntu.yaml", {
       ip_address  = var.ip_address,
       subnet_mask = var.subnet_mask,
       gateway     = var.gateway,
