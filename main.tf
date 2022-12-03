@@ -35,7 +35,7 @@ resource "vsphere_virtual_machine" "centos9" {
       hostname    = var.hostname
     }))
     "guestinfo.metadata.encoding" = "base64"
-    "guestinfo.userdata"          = var.userdata
+    "guestinfo.userdata"          = var.userdata == "" ? base64encode(file("${path.module}/templates/base/userdata.yaml")) : var.userdata
     "guestinfo.userdata.encoding" = "base64"
   }
 }
