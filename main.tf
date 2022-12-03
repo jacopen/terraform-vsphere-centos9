@@ -39,6 +39,7 @@ resource "vsphere_virtual_machine" "centos9" {
     "guestinfo.userdata"          = var.userdata == "" ? base64encode(file("${path.module}/templates/base/userdata.yaml")) : var.userdata
     "guestinfo.userdata.encoding" = "base64"
   }
+  tags = var.tags
 }
 
 resource "vsphere_virtual_machine" "ubuntu" {
@@ -53,7 +54,6 @@ resource "vsphere_virtual_machine" "ubuntu" {
   guest_id          = "ubuntu64Guest"
   nested_hv_enabled = var.nested_hv_enabled
   folder            = var.folder
-  firmware          = "efi"
 
   network_interface {
     network_id = var.network_id
@@ -82,4 +82,5 @@ resource "vsphere_virtual_machine" "ubuntu" {
     "guestinfo.userdata"          = var.userdata == "" ? base64encode(file("${path.module}/templates/base/userdata.yaml")) : var.userdata
     "guestinfo.userdata.encoding" = "base64"
   }
+  tags = var.tags
 }
