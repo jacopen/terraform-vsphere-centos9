@@ -32,26 +32,26 @@ variable "disk_size" {
   default = 20
 }
 
-variable "template_uuid"  {
+variable "template_uuid" {
 
 }
 
 variable "ip_address" {
-  
+
 }
 
 variable "subnet_mask" {
-  
+
 }
 
 variable "gateway" {
-  
+
 }
 
 variable "nameservers" {
-  
+
 }
 
 variable "hostname" {
-  
+
 }

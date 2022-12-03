@@ -1,5 +1,5 @@
 resource "vsphere_virtual_machine" "centos9" {
-  name     = var.name
+  name = var.name
 
   datastore_id     = var.datastore_id
   resource_pool_id = var.resource_pool_id
@@ -8,8 +8,8 @@ resource "vsphere_virtual_machine" "centos9" {
   memory            = var.memory
   guest_id          = "centos8_64Guest"
   nested_hv_enabled = var.nested_hv_enabled
-  folder = var.folder
-  firmware = "efi"
+  folder            = var.folder
+  firmware          = "efi"
 
   network_interface {
     network_id = var.network_id
