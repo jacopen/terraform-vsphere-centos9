@@ -55,3 +55,7 @@ variable "nameservers" {
 variable "hostname" {
 
 }
+
+variable "userdata" {
+  default = base64encode(file("${path.module}/templates/base/userdata.yaml"))
+}
