@@ -59,3 +59,11 @@ variable "hostname" {
 variable "userdata" {
   default = ""
 }
+
+variable "ubuntu" {
+  default = false
+}
+
+variable "centos9" {
+  default = false
+}
