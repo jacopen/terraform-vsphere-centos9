@@ -1,5 +1,5 @@
 variable "name" {
-  defualt = "CentOS"
+  default = "CentOS"
 }
 
 variable "datastore_id" {
