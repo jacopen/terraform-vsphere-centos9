@@ -37,26 +37,30 @@ variable "template_uuid" {
 }
 
 variable "ip_address" {
-
+  default = ""
 }
 
 variable "subnet_mask" {
-
+  default = ""
 }
 
 variable "gateway" {
-
+  default = ""
 }
 
 variable "nameservers" {
-
+  default = ""
 }
 
 variable "hostname" {
-
+  default = ""
 }
 
 variable "userdata" {
+  default = ""
+}
+
+variable "metadata" {
   default = ""
 }
 
@@ -69,6 +73,6 @@ variable "centos9" {
 }
 
 variable "tags" {
-  type = list(string)
+  type    = list(string)
   default = []
 }

@@ -28,13 +28,13 @@ resource "vsphere_virtual_machine" "centos9" {
     linked_clone  = "false"
   }
   extra_config = {
-    "guestinfo.metadata" = base64encode(templatefile("${path.module}/templates/base/metadata-centos9.yaml", {
+    "guestinfo.metadata" = var.metadata == "" ? base64encode(templatefile("${path.module}/templates/base/metadata-centos9.yaml", {
       ip_address  = var.ip_address,
       subnet_mask = var.subnet_mask,
       gateway     = var.gateway,
       nameservers = var.nameservers,
       hostname    = var.hostname
-    }))
+    })) : var.metadata
     "guestinfo.metadata.encoding" = "base64"
     "guestinfo.userdata"          = var.userdata == "" ? base64encode(file("${path.module}/templates/base/userdata.yaml")) : var.userdata
     "guestinfo.userdata.encoding" = "base64"
@@ -71,13 +71,13 @@ resource "vsphere_virtual_machine" "ubuntu" {
     linked_clone  = "false"
   }
   extra_config = {
-    "guestinfo.metadata" = base64encode(templatefile("${path.module}/templates/base/metadata-ubuntu.yaml", {
+    "guestinfo.metadata" = var.metadata == "" ? base64encode(templatefile("${path.module}/templates/base/metadata-ubuntu.yaml", {
       ip_address  = var.ip_address,
       subnet_mask = var.subnet_mask,
       gateway     = var.gateway,
       nameservers = var.nameservers,
       hostname    = var.hostname
-    }))
+    })) : var.metadata
     "guestinfo.metadata.encoding" = "base64"
     "guestinfo.userdata"          = var.userdata == "" ? base64encode(file("${path.module}/templates/base/userdata.yaml")) : var.userdata
     "guestinfo.userdata.encoding" = "base64"
