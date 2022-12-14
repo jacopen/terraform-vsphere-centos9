@@ -6,6 +6,10 @@ variable "datastore_id" {
 
 }
 
+variable "datastore_cluster_id" {
+
+}
+
 variable "resource_pool_id" {
 
 }
