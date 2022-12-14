@@ -2,8 +2,8 @@ resource "vsphere_virtual_machine" "centos9" {
   count = var.centos9 ? 1 : 0
   name  = var.name
 
-  datastore_id         = var.datastore_id ? var.datastore_id : null
-  datastore_cluster_id = var.datastore_cluster_id ? var.datastore_cluster_id : null
+  datastore_id         = var.datastore_id != "" ? var.datastore_id : null
+  datastore_cluster_id = var.datastore_cluster_id != "" ? var.datastore_cluster_id : null
   resource_pool_id     = var.resource_pool_id
 
   num_cpus          = var.num_cpus
@@ -47,8 +47,8 @@ resource "vsphere_virtual_machine" "ubuntu" {
   count = var.ubuntu ? 1 : 0
   name  = var.name
 
-  datastore_id         = var.datastore_id ? var.datastore_id : null
-  datastore_cluster_id = var.datastore_cluster_id ? var.datastore_cluster_id : null
+  datastore_id         = var.datastore_id != "" ? var.datastore_id : null
+  datastore_cluster_id = var.datastore_cluster_id != "" ? var.datastore_cluster_id : null
   resource_pool_id     = var.resource_pool_id
 
   num_cpus          = var.num_cpus
