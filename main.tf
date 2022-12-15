@@ -20,6 +20,7 @@ resource "vsphere_virtual_machine" "centos9" {
   disk {
     label = "disk0"
     size  = var.disk_size
+    thin_provisioned = true
   }
   cdrom {
     client_device = true
@@ -60,12 +61,12 @@ resource "vsphere_virtual_machine" "rhel9" {
 
   network_interface {
     network_id = var.network_id
-    thin_provisioned = true
   }
 
   disk {
     label = "disk0"
     size  = var.disk_size
+    thin_provisioned = true
   }
   cdrom {
     client_device = true
@@ -110,6 +111,7 @@ resource "vsphere_virtual_machine" "ubuntu" {
   disk {
     label = "disk0"
     size  = var.disk_size
+    thin_provisioned = true
   }
   cdrom {
     client_device = true
