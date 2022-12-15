@@ -60,6 +60,7 @@ resource "vsphere_virtual_machine" "rhel9" {
 
   network_interface {
     network_id = var.network_id
+    thin_provisioned = true
   }
 
   disk {
