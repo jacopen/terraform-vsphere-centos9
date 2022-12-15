@@ -76,6 +76,10 @@ variable "centos9" {
   default = false
 }
 
+variable "rhel9" {
+  default = false
+}
+
 variable "tags" {
   type    = list(string)
   default = []
