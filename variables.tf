@@ -84,3 +84,8 @@ variable "tags" {
   type    = list(string)
   default = []
 }
+
+variable "thin_provisioned" {
+  type    = bool
+  default = true
+}
